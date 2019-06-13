@@ -1,4 +1,4 @@
-int SegLinha = 7;
+int SegLinha = A3;
 
 void setup() {
   Serial.begin(9600);

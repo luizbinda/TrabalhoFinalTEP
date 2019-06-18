@@ -1,9 +1,4 @@
-//Programa : Teste MPU-6050
-//Alteracoes e adaptacoes : Arduino e Cia
-//
-//Baseado no programa original de JohnChi
- 
-//Carrega a biblioteca Wire
+
 #include<Wire.h>
  
 //Endereco I2C do MPU6050

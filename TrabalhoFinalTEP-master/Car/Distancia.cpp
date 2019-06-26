@@ -1,7 +1,5 @@
 #include "Distancia.h"
 
-
-
 void Distancia::SetServoAngulo(uint16_t angulo)
 {
     Servo myServo;
@@ -27,7 +25,7 @@ float Distancia::distanciaAtual(uint8_t angulo)
     
     cm = (duration/2) / 29.1; 
     
-    return cm ;
+    return cm;
 }
 
 float Distancia::distanciaAtual()

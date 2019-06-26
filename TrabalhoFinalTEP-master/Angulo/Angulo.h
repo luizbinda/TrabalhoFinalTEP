@@ -41,6 +41,7 @@ public:
     void incializarAngulo();
 };
 
+
 Angulo::Angulo()
 {
     pino_giroscopio_SLC = A4;

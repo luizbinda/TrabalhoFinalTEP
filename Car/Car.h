@@ -3,9 +3,9 @@
 
 #include <Arduino.h>
 #include "Distancia.h"
-#include "Roda.h"
+#include "SegLinha.h"
 
-class Car : public Distancia, public Roda
+class Car : public Distancia, public SegLinha
 {
     private:
         uint8_t pino_servo;
@@ -25,6 +25,7 @@ class Car : public Distancia, public Roda
         uint8_t pino_cor_pino2;
         uint8_t pino_cor_pino3;
         uint8_t pino_cor_pino4;
+
         
         
     public:

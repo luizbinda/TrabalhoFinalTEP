@@ -1,5 +1,8 @@
-#include <Servo.h>
+#ifndef Distancia_h
+#define Distancia_h
+
 #include <Arduino.h>
+#include <Servo.h>
 
 class Distancia : public Servo
 {
@@ -9,9 +12,10 @@ class Distancia : public Servo
         uint8_t pino_echo;
         
     public:
+        Servo myServo; 
+        Distancia();
         float distanciaAtual(uint8_t angulo);
-        float distanciaAtual();
         void SetServoAngulo(uint16_t angulo);
 };
 
-
+#endif

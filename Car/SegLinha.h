@@ -7,8 +7,11 @@ class SegLinha
         uint8_t pino_Seg_linha2;
 
     public:
+        static int linha_esquerda;
+        static int linha_direita;
         SegLinha();
-        bool naPista(uint8_t NumSegLinha);
+        bool naPista();
+        bool naPista(int NumSegLinha);
 
 };
 

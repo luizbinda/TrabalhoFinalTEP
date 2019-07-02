@@ -74,27 +74,36 @@ void Angulo::incializarAngulo()
 float Angulo::retornarAngulo()
 {
     MPU6050 mpu;
+      // Get INT_STATUS byte
     mpuIntStatus = mpu.getIntStatus();
-    
+
+    // get current FIFO count
     fifoCount = mpu.getFIFOCount();
 
+    // check for overflow (this should never happen unless our code is too inefficient)
     if ((mpuIntStatus & 0x10) || fifoCount == 1024)
     {
+        // reset so we can continue cleanly
         mpu.resetFIFO();
         return 200;
     }
 
     if (mpuIntStatus & 0x02)  // otherwise continue processing
     {
+        // check for correct available data length
         if (fifoCount < packetSize)
-        return; 
+        return 200; //  fifoCount = mpu.getFIFOCount();
 
+        // read a packet from FIFO
         mpu.getFIFOBytes(fifoBuffer, packetSize);
 
+        // track FIFO count here in case there is > 1 packet available
         fifoCount -= packetSize;
 
+        // flush buffer to prevent overflow
         mpu.resetFIFO();
 
+        // display Euler angles in degrees
         mpu.dmpGetQuaternion(&q, fifoBuffer);
         mpu.dmpGetGravity(&gravity, &q);
         mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
@@ -102,14 +111,15 @@ float Angulo::retornarAngulo()
         mpuRoll = ypr[ROLL] * 180 / M_PI;
         mpuYaw  = ypr[YAW] * 180 / M_PI;
 
-        mpu.resetFIFO();
+        // flush buffer to prevent overflow
         mpu.resetFIFO();
         return mpuYaw;
         delay(100);
 
+        // flush buffer to prevent overflow
         mpu.resetFIFO();
 
-  }
+    } // if (mpuIntStatus & 0x02)
+        return mpuYaw;     
 }
-
 #endif

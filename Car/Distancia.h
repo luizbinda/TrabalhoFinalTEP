@@ -10,12 +10,13 @@ class Distancia : public Servo
         uint8_t pino_servo;
         uint8_t pino_trigger;
         uint8_t pino_echo;
+        Servo *myServo; 
         
     public:
-        Servo myServo; 
-        Distancia();
+        void iniciarDistancia();
+        float distanciaAtual();
         float distanciaAtual(uint8_t angulo);
-        void SetServoAngulo(uint16_t angulo);
+        void setAngulo(uint8_t angulo);
 };
 
 #endif

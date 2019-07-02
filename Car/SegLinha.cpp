@@ -1,6 +1,6 @@
 #include "SegLinha.h"
 
-SegLinha::SegLinha()
+void SegLinha::iniciarLinha()
 {   
     pino_Seg_linha1 = A3;
     pino_Seg_linha2 = A2;

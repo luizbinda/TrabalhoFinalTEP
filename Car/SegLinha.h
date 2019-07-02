@@ -9,7 +9,7 @@ class SegLinha
     public:
         static int linha_esquerda;
         static int linha_direita;
-        SegLinha();
+        void iniciarLinha();
         bool naPista();
         bool naPista(int NumSegLinha);
 

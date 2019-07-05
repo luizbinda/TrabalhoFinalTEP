@@ -1,0 +1,36 @@
+Biblioteca Carrinho
+Funções:
+	radar.setAngulo()
+        Descrição:
+            Aponta o Servo do carrinho para o angulo passado como parametro.
+        Parâmetros:
+            sem parametro.
+
+    radar.distanciaAtual()
+        Descrição:
+            Retorna o valor atual do Ultrasonic(Sem parametro).
+	    Aponta o Servo do carrinho para o angulo passado como parametro e retorna o valor atual do Ultrasonic(com parametro). 
+        Parâmetros:
+            uint8_t angulo.     
+
+    rodas.Velocidade()
+        Descrição:
+            define a Velocidade e a direção da roda.
+        Parâmetros:
+            int velocidade.(obs: vai de -100 a 100 valor postivo para ir para frente e negativo para ir para traz)
+
+    c.cores.lerCor()
+        Descrição:
+            Le a cor atual do sensor de cor e armazana em uma struct.
+        Parâmetros:
+            sem parametro.
+
+    c.linha.naPista();
+        Descrição:
+            Retorna True ou False dependo do valor lido pelo sensor de linha.
+        Parâmetros:
+            pode ser usado com ou sem parametro.
+	    Sem parametro retorna os True se os 2 sensores forem True e false se algum deles for False.
+            ou com parâmetros que podem ser sensor_esquerda ou sensor_direita para selecionar o sensor que ir retorna o valor lido.
+  
+    

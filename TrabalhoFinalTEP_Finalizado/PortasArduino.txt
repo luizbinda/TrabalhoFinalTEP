@@ -1,0 +1,11 @@
+Portas dos sensores:
+	
+	Rodas: 2, 3, 4, 5 , 6 , 7
+	Servo: 9
+	Ultrasonic: 8, 10
+	Cor: 11 ,12 ,13, A0
+
+	Seguidor de Linha: A1, A2
+
+	Giroscopio: A4, A5
+	
